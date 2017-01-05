@@ -1,6 +1,7 @@
 package Warpcraft;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -29,7 +30,7 @@ public class LockHandler extends CommandHandler implements Listener {
         for (String s : args) {
             Player n = Bukkit.getServer().getPlayer(s);
             if (n == null) {
-                target.sendMessage(s + " is not a valid player name.");
+                target.sendMessage(ChatColor.YELLOW + s + " is not a valid player name.");
                 this.cancel();
                 HandlerList.unregisterAll(this);
                 break;
@@ -50,10 +51,10 @@ public class LockHandler extends CommandHandler implements Listener {
         }
 
         if (tar == null) {
-            target.sendMessage("That block is not a WarpDrive.");
+            target.sendMessage(ChatColor.YELLOW + "That block is not a WarpDrive.");
         } else {
             if (!target.getUniqueId().equals(tar.getOwner())) {
-                target.sendMessage("You are not the owner of this WarpDrive.");
+                target.sendMessage(ChatColor.YELLOW + "You are not the owner of this WarpDrive.");
             } else {
                 lock(tar);
             }
@@ -65,6 +66,6 @@ public class LockHandler extends CommandHandler implements Listener {
     protected void lock(WarpDrive tar) {
         tar.unlock();
         tar.lock(players);
-        target.sendMessage("Successfully locked!");
+        target.sendMessage(ChatColor.GREEN + "Successfully locked!");
     }
 }

@@ -1,6 +1,7 @@
 package Warpcraft;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -46,7 +47,7 @@ public class WarpDriveBreakListener implements Listener {
                 }
                 HandlerList.unregisterAll(this);
             } else {
-                e.getPlayer().sendMessage("That warpdrive is not yours.");
+                e.getPlayer().sendMessage(ChatColor.YELLOW + "That warpdrive is not yours.");
                 e.setCancelled(true);
             }
         }

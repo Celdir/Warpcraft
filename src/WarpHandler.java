@@ -1,6 +1,7 @@
 package Warpcraft;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -27,9 +28,9 @@ public class WarpHandler extends CommandHandler implements Listener {
 
     protected void execute() {
         if (args.length < 1) {
-            target.sendMessage("Please specify a WarpDrive to warp to.");
+            target.sendMessage(ChatColor.YELLOW + "Please specify a WarpDrive to warp to.");
         } else if (args.length > 1) {
-            target.sendMessage("You may only warp to one WarpDrive at a time.");
+            target.sendMessage(ChatColor.YELLOW + "You may only warp to one WarpDrive at a time.");
         } else {
             warpTo(args[0]);
         }
@@ -52,9 +53,9 @@ public class WarpHandler extends CommandHandler implements Listener {
             }
         }
         if (dst == null) {
-            target.sendMessage(dest + " is not a valid WarpDrive.");
+            target.sendMessage(ChatColor.YELLOW + dest + " is not a valid WarpDrive.");
         } else if (src == null) {
-            target.sendMessage("You must be standing above a WarpDrive to warp.");
+            target.sendMessage(ChatColor.YELLOW + "You must be standing above a WarpDrive to warp.");
         } else {
             dst.warp(target);
 

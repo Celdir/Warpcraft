@@ -1,6 +1,7 @@
 package Warpcraft;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -23,7 +24,7 @@ public class BackHandler extends WarpHandler implements Listener {
 
     protected void execute() {
         if (args.length > 0) {
-            target.sendMessage("Too many arguments.");
+            target.sendMessage(ChatColor.YELLOW + "Too many arguments.");
         } else {
             back();
         }
@@ -47,9 +48,9 @@ public class BackHandler extends WarpHandler implements Listener {
             }
         }
         if (src == null) {
-            target.sendMessage("You must be standing above a WarpDrive to warp.");
+            target.sendMessage(ChatColor.YELLOW + "You must be standing above a WarpDrive to warp.");
         } else if (previous == null || previous.isEmpty()) {
-            target.sendMessage("You have no previous warps on record.");
+            target.sendMessage(ChatColor.YELLOW + "You have no previous warps on record.");
         } else {
             synchronized(Warpcraft.registry) {
                 if (Warpcraft.registry.containsKey(previous.peek().getName())) {

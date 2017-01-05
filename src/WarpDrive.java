@@ -1,6 +1,7 @@
 package Warpcraft;
 
 import org.bukkit.block.Block;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import java.util.UUID;
@@ -73,9 +74,9 @@ public class WarpDrive {
     public void warp(Player p) {
         if (!locked || whitelist.contains(p.getUniqueId())) {
             p.teleport(new Location(location.getWorld(), location.getX(), location.getY() + 2, location.getZ()));
-            p.sendMessage("Welcome to " + name + "!");
+            p.sendMessage(ChatColor.DARK_PURPLE + "Welcome to " + name + "!");
         } else {
-            p.sendMessage("You do not have access to the WarpDrive \"" + name + "\".");
+            p.sendMessage(ChatColor.YELLOW + "You do not have access to the WarpDrive \"" + name + "\".");
         }
     }
 }

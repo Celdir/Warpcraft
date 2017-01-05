@@ -1,6 +1,7 @@
 package Warpcraft;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -26,10 +27,10 @@ public class UnlockHandler extends LockHandler implements Listener {
 
     protected void lock(WarpDrive tar) {
         if (!tar.isLocked()) {
-            target.sendMessage("This WarpDrive is not locked.");
+            target.sendMessage(ChatColor.YELLOW + "This WarpDrive is not locked.");
             return;
         }
         tar.unlock();
-        target.sendMessage("Successfully unlocked!");
+        target.sendMessage(ChatColor.GREEN + "Successfully unlocked!");
     }
 }

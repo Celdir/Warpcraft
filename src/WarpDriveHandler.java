@@ -1,6 +1,7 @@
 package Warpcraft;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -27,7 +28,7 @@ public class WarpDriveHandler extends CommandHandler implements Listener {
         if (args.length != 1) {
             String msg;
             msg = args.length < 1 ? "Please specify a name for the WarpDrive." : "Too many arguments. WarpDrive names can only be one word without spaces.";
-            target.sendMessage(msg);
+            target.sendMessage(ChatColor.YELLOW + msg);
             this.cancel();
             HandlerList.unregisterAll(this);
             return;
@@ -35,7 +36,7 @@ public class WarpDriveHandler extends CommandHandler implements Listener {
 
         synchronized(Warpcraft.registry) {
             if (Warpcraft.registry.containsKey(args[0])) {
-                target.sendMessage("The name " + args[0] + " is already in use as a WarpDrive. Please pick another name.");
+                target.sendMessage(ChatColor.YELLOW + "The name " + args[0] + " is already in use as a WarpDrive. Please pick another name.");
                 this.cancel();
             }
         }
@@ -46,7 +47,7 @@ public class WarpDriveHandler extends CommandHandler implements Listener {
             makeDrive(block);
             parent.getServer().getPluginManager().registerEvents(new WarpDriveBreakListener(args[0]), parent);
         } else {
-            target.sendMessage("I'm sorry, WarpDrives can only be made out of lapis blocks.");
+            target.sendMessage(ChatColor.YELLOW + "I'm sorry, WarpDrives can only be made out of lapis blocks.");
         }
 
         HandlerList.unregisterAll(this);
@@ -56,13 +57,13 @@ public class WarpDriveHandler extends CommandHandler implements Listener {
         synchronized(Warpcraft.registry) {
             synchronized(Warpcraft.placements) {
                 if (Warpcraft.placements.containsKey(b.getLocation())) {
-                    target.sendMessage("This block is already a WarpDrive.");
+                    target.sendMessage(ChatColor.YELLOW + "This block is already a WarpDrive.");
                     return;
                 }
                 Warpcraft.registry.put(args[0], new WarpDrive(args[0], target.getUniqueId(), b));
                 Warpcraft.placements.put(b.getLocation(), Warpcraft.registry.get(args[0]));
             }
-            target.sendMessage("WarpDrive created successfully!");
+            target.sendMessage(ChatColor.GREEN + "WarpDrive created successfully!");
         }
     }
 }

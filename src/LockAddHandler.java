@@ -1,6 +1,7 @@
 package Warpcraft;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -23,7 +24,7 @@ public class LockAddHandler extends LockHandler implements Listener {
         super(p, cmd, args);
 
         if (args.length < 1) {
-            target.sendMessage("You must specify names to be added to the lock.");
+            target.sendMessage(ChatColor.YELLOW + "You must specify names to be added to the lock.");
             this.cancel();
             HandlerList.unregisterAll(this);
         }
@@ -31,10 +32,10 @@ public class LockAddHandler extends LockHandler implements Listener {
 
     protected void lock(WarpDrive tar) {
         if (!tar.isLocked()) {
-            target.sendMessage("This WarpDrive is not locked.");
+            target.sendMessage(ChatColor.YELLOW + "This WarpDrive is not locked.");
             return;
         }
         tar.lock(players);
-        target.sendMessage("Successfully added players to lock!");
+        target.sendMessage(ChatColor.GREEN + "Successfully added players to lock!");
     }
 }
