@@ -6,26 +6,26 @@ website: https://github.com/celdir/warpcraft
 main: Warpcraft.Warpcraft
 commands:
     warpdrive:
-        description: Creates a WarpDrive with a given name.
+        description: Creates a WarpDrive with a given name. Right-click lapis block to use.
         usage: /warpdrive [name]
     warpinfo:
-        description: Retrieves information about a WarpDrive.
-        usage: /warpinfo [name]
+        description: Retrieves information about a WarpDrive. Right-click WarpDrive to use.
+        usage: /warpinfo
     warp:
-        description: Warps player to a given WarpDrive.
+        description: Warps player to a given WarpDrive. Must be standing above a WarpDrive.
         usage: /warp [WarpDrive name]
     back:
-        description: Returns a player to the last WarpDrive that they used.
+        description: Returns a player to the last WarpDrive that they used. Must be standing above a WarpDrive.
         usage: /back
     lock:
-        description: Restricts the usage of a WarpDrive to a specific group of players, including the owner.
+        description: Restricts the usage of a WarpDrive to a specific group of players, including the owner. Right-click WarpDrive to use.
         usage: /lock [usernames]
     lockadd:
-        description: Adds users to a WarpDrive's lock's whitelist.
+        description: Adds users to a WarpDrive's lock's whitelist. Right-click WarpDrive to use.
         usage: /lockadd [usernames]
     lockremove:
-        description: Removes users from a WarpDrive's lock's whitelist.
+        description: Removes users from a WarpDrive's lock's whitelist. Right-click WarpDrive to use.
         usage: /lockremove [usernames]
     unlock:
-        description: Removes a WarpDrive's lock.
+        description: Removes a WarpDrive's lock. Right-click WarpDrive to use.
         usage: /unlock

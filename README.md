@@ -6,7 +6,8 @@ Teleportation is acheived through WarpDrives, which are made out of lapis blocks
 
 ### Commands ###
     * /warpdrive <name> - Right-click on lapis block to make it a WarpDrive / destination.
-    * /warp <destination> - Warps player to destination.
+    * /warpinfo - Right-click on WarpDrive to retrieve information (name, owner, lock status) about it.
+    * /warp <destination> - Warps player to destination. Player must be standing over a WarpDrive.
     * /back - Warps player to previous destination. Can be used consecutively.
     * /lock <usernames> - Right-click on warpdrive to restrict its use to the specified users.
     * /lockadd <usernames> - Right-click on warpdrive to add the specified users to the warpdrive's whitelist.
