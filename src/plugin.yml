@@ -1,0 +1,28 @@
+name: Warpcraft
+version: 1.0
+description: A simple teleporation plugin for Minecraft.
+author: Celdir
+website: https://github.com/celdir/warpcraft
+main: Warpcraft.Warpcraft
+commands:
+    warpdrive:
+        description: Creates a WarpDrive with a given name.
+        usage: /warpdrive [name]
+    warp:
+        description: Warps player to a given WarpDrive.
+        usage: /warp [WarpDrive name]
+    back:
+        description: Returns a player to the last WarpDrive that they used.
+        usage: /back
+    lock:
+        description: Restricts the usage of a WarpDrive to a specific group of players, including the owner.
+        usage: /lock [usernames]
+    lockadd:
+        description: Adds users to a WarpDrive's lock's whitelist.
+        usage: /lockadd [usernames]
+    lockremove:
+        description: Removes users from a WarpDrive's lock's whitelist.
+        usage: /lockremove [usernames]
+    unlock:
+        description: Removes a WarpDrive's lock.
+        usage: /unlock

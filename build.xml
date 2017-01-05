@@ -1,0 +1,22 @@
+<project>
+    <path id="classpath">
+        <fileset dir="./server/" includes="spigot.jar" />
+    </path>
+    <target name="clean">
+        <delete dir="build" />
+    </target>
+    <target name="compile">
+        <mkdir dir="build/classes" />
+        <javac target="1.8" srcdir="src" destdir="build/classes" classpathref="classpath" debug="true"
+debuglevel="lines,vars,source">
+            <compilerarg value="-Xlint:deprecation"/>
+        </javac>
+    </target>
+    <target name="jar" depends="compile">
+        <mkdir dir="build/jar" />
+        <jar destfile="build/jar/Warpcraft.jar" basedir="build/classes">
+            <zipfileset dir="./src" includes="plugin.yml" fullpath="plugin.yml" />
+        </jar>
+        <copy file="build/jar/Warpcraft.jar" tofile="./server/plugins/Warpcraft.jar" />
+    </target>
+</project>
