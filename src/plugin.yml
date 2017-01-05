@@ -8,6 +8,9 @@ commands:
     warpdrive:
         description: Creates a WarpDrive with a given name.
         usage: /warpdrive [name]
+    warpinfo:
+        description: Retrieves information about a WarpDrive.
+        usage: /warpinfo [name]
     warp:
         description: Warps player to a given WarpDrive.
         usage: /warp [WarpDrive name]

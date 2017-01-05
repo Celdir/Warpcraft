@@ -44,6 +44,7 @@ public class Warpcraft extends JavaPlugin implements CommandExecutor {
             getCommand("lockadd").setExecutor(this);
             getCommand("lockremove").setExecutor(this);
             getCommand("unlock").setExecutor(this);
+            getCommand("warpinfo").setExecutor(this);
 
             getServer().getPluginManager().enablePlugin(this);
             getLogger().info("Enabled Warpcraft plugin!");
@@ -143,6 +144,8 @@ public class Warpcraft extends JavaPlugin implements CommandExecutor {
             c = new LockRemoveHandler(player, label, args);
         } else if (label.equalsIgnoreCase("unlock")) {
             c = new UnlockHandler(player, label, args);
+        } else if (label.equalsIgnoreCase("warpinfo")) {
+            c = new WarpInfoHandler(player, label, args);
         } else {
             return false;
         }
