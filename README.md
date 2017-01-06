@@ -20,4 +20,4 @@ This package should be built using
     ant jar
 
 ### License ###
-This plugin is copywritten under the MIT License, although I doubt anybody would want it.
+This plugin is copyrighted under the MIT License, although I doubt anybody would want it.
